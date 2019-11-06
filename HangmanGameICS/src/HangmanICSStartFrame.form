@@ -55,6 +55,11 @@
                   </Group>
               </Group>
           </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
+              <Component id="ReadyButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -68,7 +73,9 @@
               <Component id="EnterGuessWord" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="ReadyButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -102,7 +109,6 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EnterGuessWordActionPerformed"/>
@@ -121,6 +127,14 @@
           </Border>
         </Property>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="ReadyButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="READY"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ReadyButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

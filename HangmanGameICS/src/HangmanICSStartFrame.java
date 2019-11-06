@@ -8,12 +8,12 @@
  *
  * @author S331474189
  */
-public class HangmanICSFrame extends javax.swing.JFrame {
-
+public class HangmanICSStartFrame extends javax.swing.JFrame {
+    public static String gameWord;
     /**
      * Creates new form HangmanICSFrame
      */
-    public HangmanICSFrame() {
+    public HangmanICSStartFrame() {
         initComponents();
     }
 
@@ -32,6 +32,7 @@ public class HangmanICSFrame extends javax.swing.JFrame {
         TitleMessage = new javax.swing.JLabel();
         EnterGuessWord = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        ReadyButton = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
 
@@ -48,7 +49,6 @@ public class HangmanICSFrame extends javax.swing.JFrame {
 
         EnterGuessWord.setBackground(new java.awt.Color(51, 153, 255));
         EnterGuessWord.setForeground(new java.awt.Color(0, 255, 255));
-        EnterGuessWord.setText("jTextField1");
         EnterGuessWord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EnterGuessWordActionPerformed(evt);
@@ -57,6 +57,13 @@ public class HangmanICSFrame extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon("P:\\Computer Science (G12)\\HangmanICSPics\\hangman start picture.png")); // NOI18N
         jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255), 5));
+
+        ReadyButton.setText("READY");
+        ReadyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReadyButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -75,6 +82,10 @@ public class HangmanICSFrame extends javax.swing.JFrame {
                             .addComponent(EnterGuessWord, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
                         .addContainerGap(35, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(116, 116, 116)
+                .addComponent(ReadyButton)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,15 +98,22 @@ public class HangmanICSFrame extends javax.swing.JFrame {
                 .addComponent(EnterGuessWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addGap(34, 34, 34))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ReadyButton)
+                .addGap(5, 5, 5))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void EnterGuessWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterGuessWordActionPerformed
-        // TODO add your handling code here:
+        gameWord = EnterGuessWord.getText();
     }//GEN-LAST:event_EnterGuessWordActionPerformed
+
+    private void ReadyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReadyButtonActionPerformed
+        new HangmanICSMainFrame().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ReadyButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -114,26 +132,27 @@ public class HangmanICSFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HangmanICSFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HangmanICSStartFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HangmanICSFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HangmanICSStartFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HangmanICSFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HangmanICSStartFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HangmanICSFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HangmanICSStartFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HangmanICSFrame().setVisible(true);
+                new HangmanICSStartFrame().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField EnterGuessWord;
+    private javax.swing.JButton ReadyButton;
     private javax.swing.JLabel Title;
     private javax.swing.JLabel TitleMessage;
     private javax.swing.JLabel jLabel1;
